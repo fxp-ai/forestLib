@@ -1,6 +1,6 @@
 module forestLib {
     requires cplusplus
-    header "forest.h"
-    header "tree.h"
+    header "forest.hpp"
+    header "tree.hpp"
     export *
 }

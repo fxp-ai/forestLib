@@ -1,10 +1,6 @@
 #pragma once
 
-#ifdef _WIN32
-#define API __declspec(dllexport)
-#else
-#define API
-#endif
+#include "core.hpp"
 
 enum class TreeKind {
   Oak,
@@ -12,7 +8,7 @@ enum class TreeKind {
   Willow
 };
 
-class API Tree {
+class FOREST_API Tree {
 public:
   Tree(TreeKind kind);
 private:
