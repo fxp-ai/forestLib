@@ -1,5 +1,5 @@
 import Foundation
-import forestLib
+import ForestLib
 
 print("Hello, Swift")
 let tree = Tree(.Oak)

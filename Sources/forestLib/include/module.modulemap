@@ -1,4 +1,4 @@
-module forestLib {
+module ForestLib {
     requires cplusplus
     header "forest.hpp"
     header "tree.hpp"
