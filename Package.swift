@@ -6,19 +6,19 @@ let package = Package(
     name: "CommandLineSwiftToolUsesCxx",
     products: [
         .library(
-            name: "forestLib",
-            targets: ["forestLib"]),
+            name: "ForestLib",
+            targets: ["ForestLib"]),
         .executable(
-            name: "swiftCLITool",
-            targets: ["swiftCLITool"])
+            name: "SwiftCLITool",
+            targets: ["SwiftCLITool"])
     ],
     targets: [
         .target(
-            name: "forestLib",
+            name: "ForestLib",
             exclude: ["CMakeLists.txt"]),
         .executableTarget(
-            name: "swiftCLITool",
-            dependencies: ["forestLib"],
+            name: "SwiftCLITool",
+            dependencies: ["ForestLib"],
             exclude: ["CMakeLists.txt"],
             swiftSettings: [.interoperabilityMode(.Cxx)])
     ],

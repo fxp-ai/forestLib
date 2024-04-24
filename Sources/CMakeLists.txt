@@ -1,2 +1,2 @@
-add_subdirectory(forestLib)
-add_subdirectory(swiftCLITool)
+add_subdirectory(ForestLib)
+add_subdirectory(SwiftCLITool)
