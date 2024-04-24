@@ -8,12 +8,11 @@ on:
 
 jobs:
   build:      
-    runs-on: [ self-hosted, "${{ matrix.os }}", "${{ matrix.architecture }}" ]
+    runs-on: [ self-hosted, "${{ matrix.os }}"]
     strategy:
       fail-fast: false
       matrix:
         os: ["Linux", "Windows", "macOS"]
-        architecture: ["ARM64"]
         
     steps:
     - uses: actions/checkout@v3
