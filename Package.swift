@@ -14,10 +14,12 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "forestLib"),
+            name: "forestLib",
+            exclude: ["CMakeLists.txt"]),
         .executableTarget(
             name: "swiftCLITool",
             dependencies: ["forestLib"],
+            exclude: ["CMakeLists.txt"],
             swiftSettings: [.interoperabilityMode(.Cxx)])
     ],
     cxxLanguageStandard: .cxx17
