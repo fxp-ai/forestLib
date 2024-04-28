@@ -8,4 +8,6 @@ int main() {
   int32_t c = SwiftLib::addNumbers(a, b);
   std::cout << "The number is: " << c <<  std::endl;
   SwiftLib::sayHello("Felix");
+  SwiftLib::downloadFile("https://scf.ai");
+  std::cin.get();
 }

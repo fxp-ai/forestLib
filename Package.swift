@@ -8,6 +8,7 @@ let package = Package(
         .library(
             name: "ForestLib",
             targets: ["ForestLib"]),
+        .library(name: "SwiftLib", targets: ["SwiftLib"]),
         .executable(
             name: "SwiftCLITool",
             targets: ["SwiftCLITool"])
@@ -16,9 +17,10 @@ let package = Package(
         .target(
             name: "ForestLib",
             exclude: ["CMakeLists.txt"]),
+        .target(name: "SwiftLib"),
         .executableTarget(
             name: "SwiftCLITool",
-            dependencies: ["ForestLib"],
+            dependencies: ["ForestLib", "SwiftLib"],
             exclude: ["CMakeLists.txt"],
             swiftSettings: [.interoperabilityMode(.Cxx)])
     ],

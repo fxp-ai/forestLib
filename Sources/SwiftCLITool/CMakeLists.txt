@@ -1,2 +1,2 @@
 add_executable(SwiftCLITool main.swift)
-target_link_libraries(SwiftCLITool PRIVATE ForestLib)
+target_link_libraries(SwiftCLITool PRIVATE SwiftLib ForestLib)
