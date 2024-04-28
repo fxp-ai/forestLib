@@ -45,4 +45,3 @@ _swift_generate_cxx_header_target(
 
 add_library(SwiftLib math.swift)
 add_dependencies(SwiftLib swiftlib_swift_h)
-target_compile_options(SwiftLib PUBLIC "$<$<COMPILE_LANGUAGE:Swift>:-cxx-interoperability-mode=default>")
