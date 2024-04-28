@@ -17,7 +17,7 @@ let package = Package(
         .target(
             name: "ForestLib",
             exclude: ["CMakeLists.txt"]),
-        .target(name: "SwiftLib"),
+        .target(name: "SwiftLib", exclude: ["CMakeLists.txt"]),
         .executableTarget(
             name: "SwiftCLITool",
             dependencies: ["ForestLib", "SwiftLib"],
