@@ -1,9 +1,9 @@
 include(CheckCompilerFlag)
 
-function(_swift_generate_cxx_header_target target module header)
+function(SwiftGenerateCxxHeaderTarget target module header)
   cmake_parse_arguments(ARG "" "" "SOURCES;SEARCH_PATHS;DEPENDS" ${ARGN})
   if(NOT ARG_SOURCES)
-    message(FATAL_ERROR "No sources provided to 'swift_generate_cxx_header_target'")
+    message(FATAL_ERROR "No sources provided to 'SwiftGenerateCxxHeaderTarget'")
   endif()
 
   if(ARG_SEARCH_PATHS)
@@ -36,12 +36,13 @@ function(_swift_generate_cxx_header_target target module header)
   add_custom_target("${target}" DEPENDS "${header}")
 endfunction()
 
-_swift_generate_cxx_header_target(
-  swiftlib_swift_h
+SwiftGenerateCxxHeaderTarget(
+  SwiftLib_Swift_H
   SwiftLib
   "${CMAKE_CURRENT_BINARY_DIR}/include/SwiftLib/SwiftLib-Swift.h"
   SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/math.swift")
 
 
 add_library(SwiftLib math.swift)
-add_dependencies(SwiftLib swiftlib_swift_h)
+target_include_directories(SwiftLib INTERFACE "${CMAKE_CURRENT_BINARY_DIR}/include")
+add_dependencies(SwiftLib SwiftLib_Swift_H)
