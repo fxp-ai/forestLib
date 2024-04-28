@@ -1,4 +1,7 @@
 import Foundation
+#if canImport(FoundationNetwork)
+import FoundationNetwork
+#endif
 
 public func addNumbers(x: Int32, y: Int32) -> Int32 {
   print("I am adding \(x) and \(y)")

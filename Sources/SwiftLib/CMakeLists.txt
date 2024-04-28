@@ -36,13 +36,14 @@ function(SwiftGenerateCxxHeaderTarget target module header)
   add_custom_target("${target}" DEPENDS "${header}")
 endfunction()
 
+
+set(library_src ${CMAKE_CURRENT_SOURCE_DIR}/library.swift)
+add_library(SwiftLib ${library_src})
+target_include_directories(SwiftLib INTERFACE "${CMAKE_CURRENT_BINARY_DIR}/include")
+
 SwiftGenerateCxxHeaderTarget(
   SwiftLib_Swift_H
   SwiftLib
   "${CMAKE_CURRENT_BINARY_DIR}/include/SwiftLib/SwiftLib-Swift.h"
-  SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/math.swift")
-
-
-add_library(SwiftLib math.swift)
-target_include_directories(SwiftLib INTERFACE "${CMAKE_CURRENT_BINARY_DIR}/include")
+  SOURCES "${library_src}")
 add_dependencies(SwiftLib SwiftLib_Swift_H)
